@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import "./Home.css";
 
-const API_BASE = "http://localhost:4000";
+const API_BASE = "https://229c09b5763a.ngrok-free.app";
 
 async function api(path: string, options?: RequestInit) {
   const token =
