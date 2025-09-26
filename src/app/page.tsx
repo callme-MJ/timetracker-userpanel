@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import "./Home.css";
 
-const API_BASE = "https://229c09b5763a.ngrok-free.app";
+const API_BASE = "https://cdd468997899.ngrok-free.app";
 
 async function api(path: string, options?: RequestInit) {
   const token =
@@ -75,7 +75,7 @@ export default function Home() {
       setTotal(data?.total || 0);
     } catch (e: any) {
       setError(e.message);
-      addToast(e.message || 'Failed to load data', 'error');
+      // addToast(e.message || 'Failed to load data', 'error');
     } finally {
       setLoading(false);
     }
@@ -92,7 +92,7 @@ export default function Home() {
         const me = await api(`/auth/me`);
         setCurrentUser(me);
       } catch (err: any) {
-        addToast(err?.message || 'Failed to load profile', 'error');
+        // addToast(err?.message || 'Failed to load profile', 'error');
       }
       await load();
     })();
@@ -106,12 +106,15 @@ export default function Home() {
       if (res.error) {
         addToast(res.message, 'error');
         
+      }else{
+        addToast("Action Success", "success")
       }
-      addToast("Action Success", "success")
       await load();
       return res;
     } catch (e: any) {
-      addToast(e?.message || 'Action failed', 'error');
+      console.log(error);
+      
+      // addToast(e?.message || 'Action failed', 'error');
     }
   }
 
