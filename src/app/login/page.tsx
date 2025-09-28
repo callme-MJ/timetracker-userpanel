@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://cdd468997899.ngrok-free.app";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://unsumptuous-meekly-charles.ngrok-free.dev";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
